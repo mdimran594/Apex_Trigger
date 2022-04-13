@@ -1,0 +1,14 @@
+trigger projectassigntrigger on Project__c (after insert, after update) {
+    if(trigger.isInsert)
+    {
+        projectassign.create(trigger.new);
+        
+    }   
+    if(trigger.isUpdate)
+    {
+        projectassign.updateProj(trigger.new);
+        
+    }
+    
+
+}
